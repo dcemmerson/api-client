@@ -1,9 +1,9 @@
 import React from 'react'
 
-interface Props {}
+// interface Props {}
 
-function Index(props: Props) {
-  const {} = props
+function Index() {
+  // const {} = props
 
   return (
     <div>Not found</div>
