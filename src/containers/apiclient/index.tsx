@@ -2,8 +2,7 @@ import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
 import { postsSelector, fetchPosts } from 'src/slices/postslice'
-import SideMenu from 'src/containers/sidemenu'
-
+import DefaultContainer from 'src/containers/core/defaultcontainer/index'
 
 function ApiClient() {
   const dispatch = useDispatch()
@@ -27,8 +26,9 @@ console.log(posts)
 
   return (
     <>
-      <SideMenu />
-      { render() }
+      <DefaultContainer>
+        { render() }
+      </DefaultContainer>
     </>
   )
 }
