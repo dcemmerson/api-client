@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from 'react-redux'
 
 import { postsSelector, fetchPosts } from 'src/slices/postslice'
 import DefaultContainer from 'src/containers/core/defaultcontainer/index'
+import ApiRequester from 'src/components/apirequester/index'
+
 
 function ApiClient() {
   const dispatch = useDispatch()
@@ -13,8 +15,8 @@ function ApiClient() {
   
 console.log(posts)
   const render = () => {
-    if(loading) return <div>loading...</div>
-    if(hasErrors) return <div>has errors...</div>
+    if(loading) return [<div>loading...</div>]
+    if(hasErrors) return [<div>has errors...</div>]
     
     return posts.map((post, index) => (
       <div key={index} className={`${index}`}>
@@ -27,8 +29,12 @@ console.log(posts)
   return (
     <>
       <DefaultContainer>
-        { render() }
-      </DefaultContainer>
+          {[
+            <ApiRequester />,
+          ...render(),
+          ]}
+        </DefaultContainer>
+        
     </>
   )
 }
