@@ -2,7 +2,6 @@ import {combineReducers} from 'redux';
 import PostsReducer, { PostList } from "./postslice";
 import ApiClientReducer, { ApiClientState } from "./apiclientslice";
 
-
 export interface State {
   posts: PostList
   apiClient: ApiClientState
