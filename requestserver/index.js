@@ -5,9 +5,14 @@ const fs = require('fs')
 const app = express()
 const port = 3001
 
+// routing
+const apiclientroutes = require('./apiclient/apiclientroutes')
+
 app.get('/healthcheck', (req, res) => {
   res.send('Whale hello!')
 })
+
+app.use('/apiclient', apiclientroutes)
 
 // app.listen(port, () => {
 //   console.log(`Example app listening at http://localhost:${port}`)

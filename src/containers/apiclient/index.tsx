@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 
 import { postsSelector, fetchPosts } from 'src/slices/postslice'
 import DefaultContainer from 'src/containers/core/defaultcontainer/index'
-import ApiRequester from 'src/components/apirequester/index'
+import ApiRequestInput from 'src/components/apirequestinput/index'
 
 
 function ApiClient() {
@@ -13,7 +13,6 @@ function ApiClient() {
     dispatch(fetchPosts())
   }, [dispatch])  
   
-console.log(posts)
   const render = () => {
     if(loading) return [<div>loading...</div>]
     if(hasErrors) return [<div>has errors...</div>]
@@ -30,7 +29,7 @@ console.log(posts)
     <>
       <DefaultContainer>
           {[
-            <ApiRequester />,
+            <ApiRequestInput />,
           ...render(),
           ]}
         </DefaultContainer>
