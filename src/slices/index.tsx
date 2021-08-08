@@ -10,7 +10,6 @@ export interface State {
   // apiClientRequest: ApiClientRequest
 }
 
-
 const rootReducer = combineReducers({
   posts: PostsReducer,
   apiClient: ApiClientReducer,
